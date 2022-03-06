@@ -15,6 +15,6 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Enter Project
-      run: composer require project/
+      run: cd project/ && composer install
 
 
