@@ -29,8 +29,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string')]
     private $password;
 
-    #[ORM\Column(type: 'integer')]
-    private $score;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $sscore;
+
+ 
 
     public function getId(): ?int
     {
@@ -102,15 +104,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getScore(): ?int
+    public function getSscore(): ?int
     {
-        return $this->score;
+        return $this->sscore;
     }
 
-    public function setScore(int $score): self
+    public function setSscore(?int $sscore): self
     {
-        $this->score = $score;
+        $this->sscore = $sscore;
 
         return $this;
     }
+
+
+
 }
