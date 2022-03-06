@@ -16,7 +16,6 @@ jobs:
 
     - name: Enter Project
       run: cd project/
-      
-    - name: Install Composer
       run: composer install
+
 
