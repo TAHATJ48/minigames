@@ -8,15 +8,13 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Username</th>
                 <th>Score</th>
             </tr>
         </thead>
         <tbody>
-        {% for user in users %}
+        {% for user in users | sort((a, b) => b.sscore <=> a.sscore) %}
             <tr>
-                <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.sscore }}</td>
             </tr>
