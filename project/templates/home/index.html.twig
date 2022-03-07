@@ -10,15 +10,18 @@
 <script src="https://kit.fontawesome.com/3d8d94b439.js" crossorigin="anonymous"></script>
 
 <div class="example-wrapper">
-    <h1>Hello {{ app.user.username }}!</h1>
-
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <h1>Hello {{ app.user.username }}!</h1>
+    {% else %}
+        <h1>Hello! ✅</h1>
+    {% endif %}
     <h1>GAMES</h1>
     <ul>
         <li>TicTacToe <a href="tictactoe"><i class="fa fa-gamepad" style="font-size:25px;color:red"></i>
 </a></li>
         <li>RockPaperScissors <a href="rockpaperscissors"><i class="fa fa-gamepad" style="font-size:25px;color:red"></i>
 </a></li>
-        <li>Hangman <a href="tictactoe"><i class="fa fa-gamepad" style="font-size:25px;color:red"></i>
+        <li>Hangman <a href="pendu"><i class="fa fa-gamepad" style="font-size:25px;color:red"></i>
 </a></li>
     </ul>
     <h1> LEADERBOARD <a href="user"><i class="fa-solid fa-clipboard" style="color:red"></i>
