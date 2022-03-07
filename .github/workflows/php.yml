@@ -14,7 +14,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Enter Project
-      run: cd project/ && composer install
+    - name: Composer install
+      run: cd project/ && composer install  
+
+    - name: C
+      run: cd project/ && symfony server:start
+    
+
+
 
 
