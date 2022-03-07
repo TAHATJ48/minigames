@@ -30,14 +30,12 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/score', name: 'user_score', methods: ['GET'])]
-    public function score(User $sscore): Response
+    #[Route('/{id}/score', name: 'score', methods: ['GET','POST'])]
+    public function addScore(Request $request, User $user): Response
     {
-
-        $sscore->setScore(+1);
-
-        return $this->render('user/score.html.twig', [
-            'score' => $sscore->findAll(),
-        ]);
+        $user->setSscore($user->getSscore() + 1);
+        $this->_em->persist($user);
+        $this->_em->flush();
+        return $this->redirectToRoute('home');
     }
 }
