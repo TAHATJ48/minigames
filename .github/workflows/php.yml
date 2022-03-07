@@ -16,7 +16,6 @@ jobs:
 
     - name: Composer install
       run: cd project/ && composer install  
-*
     
 
 
