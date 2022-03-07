@@ -33,7 +33,7 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($user);
             $entityManager->flush();
-            return $this->redirectToRoute('tictactoe');
+            return $this->redirectToRoute('home');
 
             return $userAuthenticator->authenticateUser(
                 $user,

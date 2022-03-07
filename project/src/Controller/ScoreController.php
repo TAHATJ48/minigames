@@ -9,9 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ScoreController extends AbstractController
 {
-    #[Route('/score', name: 'score')]
-    public function index(): Response
+    #[Route('/score', name: 'sscore', methods: ['GET','POST'])]
+
+    public function index(User $user): Response
     {
-        setScore(this->getScore()+ 1);
+        $user->setSscore($user->getSscore() + 1);
+        $this->getDoctrine()->getManager()->flush();
+        return $this->redirectToRoute('home');
     }
+
 }
