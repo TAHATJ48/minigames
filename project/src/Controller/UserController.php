@@ -29,4 +29,15 @@ class UserController extends AbstractController
             'user' => $user,
         ]);
     }
+
+    #[Route('/score', name: 'user_score', methods: ['GET'])]
+    public function score(User $sscore): Response
+    {
+
+        $sscore->setScore(+1);
+
+        return $this->render('user/score.html.twig', [
+            'score' => $sscore->findAll(),
+        ]);
+    }
 }
