@@ -34,8 +34,7 @@ class UserController extends AbstractController
     public function addScore(Request $request, User $user): Response
     {
         $user->setSscore($user->getSscore() + 1);
-        $this->_em->persist($user);
-        $this->_em->flush();
+        $this->getDoctrine()->getEntityManager()->flush();
         return $this->redirectToRoute('home');
     }
 }

@@ -30,7 +30,7 @@ function pick()
   document.f.word.value=choice;
   if (!blank)
   {
-    document.f.tried.value="   === You Win! ===";
+    document.f.tried.value="   === Gagné ! ===";
     document.f.score.value++;
     running=0;
   }
@@ -83,7 +83,6 @@ function seek(letter)
       {
         document.f.tried.value="Perdu ! - Recommencer !";
         document.f.word.value=words[index];
-        document.f.score.value--;
         running=0;
       }
       else pick();
