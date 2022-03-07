@@ -16,9 +16,7 @@ jobs:
 
     - name: Composer install
       run: cd project/ && composer install  
-
-    - name: C
-      run: cd project/ && symfony server:start
+*
     
 
 
